@@ -51,9 +51,20 @@ public class Complejo {
     return this.real;
   }
   public void leer(){
+    System.out.print("introduzca 2 numeros espaciados(real+imag):");
     Scanner s=new Scanner(System.in);
-    real=s.nextFloat();
-    imag=s.nextFloat();
+    try
+    {
+      Complejo c=new Complejo();
+      this.real=s.nextFloat();
+      this.imag=s.nextFloat();
+    }
+    catch(InputMismatchException ex)
+    {
+      System.out.println("\n(Ingrese un número, en este momento se asigna o)");
+      this.real=0;
+      this.imag=0;
+    }
   }
   public void imprimir(){
     if(real==0){
